@@ -1,11 +1,11 @@
-package org.example;
-
+import org.example.Man;
+import org.example.Woman;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ManTest {
 
-    @Test
+    @Test(description = "перевірка методу testGetPartner()")
     public void testGetPartner() {
         Woman woman = new Woman("Anna", "Smith", 30);
         Man man = new Man("John", "Doe", 35);
@@ -16,7 +16,7 @@ public class ManTest {
         Assert.assertEquals(partner, woman);
     }
 
-    @Test
+    @Test(description = "перевірка методу testSetPartner()")
     public void testSetPartner() {
         Woman woman = new Woman("Anna", "Smith", 30);
         Man man = new Man("John", "Doe", 35);
@@ -27,7 +27,7 @@ public class ManTest {
         Assert.assertEquals(partner, woman);
     }
 
-    @Test
+    @Test(description = "перевірка методу testIsRetired()")
     public void testIsRetired() {
         Man man1 = new Man("John", "Doe", 40); // Not retired
         Man man2 = new Man("Adam", "Smith", 70); // Retired
@@ -39,7 +39,7 @@ public class ManTest {
         Assert.assertTrue(isRetired2);
     }
 
-    @Test
+    @Test(description = "перевірка методу testRegisterPartnership()")
     public void testRegisterPartnership() {
         Woman woman = new Woman("Anna", "Smith", 30);
         Man man = new Man("John", "Doe", 35);
@@ -51,7 +51,7 @@ public class ManTest {
         Assert.assertEquals(woman.getLastName(), "Doe");
     }
 
-    @Test
+    @Test(description = "перевірка методу testDeregisterPartnership()")
     public void testDeregisterPartnership() {
         Woman woman = new Woman("Anna", "Smith", 30);
         Man man = new Man("John", "Doe", 35);
