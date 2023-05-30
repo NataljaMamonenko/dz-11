@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class ManTest {
 
-    @Test(description = "перевірка методу testGetPartner()")
+    @Test(description = "validation of method testGetPartner()")
     public void testGetPartner() {
         Woman woman = new Woman("Anna", "Smith", 30);
         Man man = new Man("John", "Doe", 35);
@@ -16,7 +16,7 @@ public class ManTest {
         Assert.assertEquals(partner, woman);
     }
 
-    @Test(description = "перевірка методу testIsRetired()")
+    @Test(description = "validation of method testIsRetired()")
     public void testIsRetired() {
         Man man1 = new Man("John", "Doe", 40); // Not retired
         Man man2 = new Man("Adam", "Smith", 70); // Retired
@@ -28,7 +28,7 @@ public class ManTest {
         Assert.assertTrue(isRetired2);
     }
 
-    @Test(description = "перевірка методу testRegisterPartnership()")
+    @Test(description = "validation of method testRegisterPartnership()")
     public void testRegisterPartnership() {
         Woman woman = new Woman("Anna", "Smith", 30);
         Man man = new Man("John", "Doe", 35);
@@ -40,7 +40,7 @@ public class ManTest {
         Assert.assertEquals(woman.getLastName(), "Doe");
     }
 
-    @Test(description = "перевірка методу testDeregisterPartnership()")
+    @Test(description = "validation of method testDeregisterPartnership()")
     public void testDeregisterPartnership() {
         Woman woman = new Woman("Anna", "Smith", 30);
         Man man = new Man("John", "Doe", 35);

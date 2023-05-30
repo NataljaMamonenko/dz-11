@@ -5,28 +5,28 @@ import org.testng.annotations.Test;
 
 public class PersonTest {
 
-    @Test
+    @Test(description = "validation of method testGetFirstName()")
     public void testGetFirstName() {
         Person person = new Person("John", "Doe", 30);
         String firstName = person.getFirstName();
         Assert.assertEquals(firstName, "John");
     }
 
-    @Test
+    @Test(description = "validation of method testGetLastName()")
     public void testGetLastName() {
         Person person = new Person("John", "Doe", 30);
         String lastName = person.getLastName();
         Assert.assertEquals(lastName, "Doe");
     }
 
-    @Test
+    @Test(description = "validation of method testGetAge()")
     public void testGetAge() {
         Person person = new Person("John", "Doe", 30);
         int age = person.getAge();
         Assert.assertEquals(age, 30);
     }
 
-    @Test
+    @Test(description = "validation of method testGetMaidenName()")
     public void testGetMaidenName() {
         Person person = new Person("Jane", "Smith", 35);
         String maidenName = person.getMaidenName();
