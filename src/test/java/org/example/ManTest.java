@@ -16,17 +16,6 @@ public class ManTest {
         Assert.assertEquals(partner, woman);
     }
 
-    @Test(description = "перевірка методу testSetPartner()")
-    public void testSetPartner() {
-        Woman woman = new Woman("Anna", "Smith", 30);
-        Man man = new Man("John", "Doe", 35);
-
-        man.setPartner(woman);
-        Woman partner = man.getPartner();
-
-        Assert.assertEquals(partner, woman);
-    }
-
     @Test(description = "перевірка методу testIsRetired()")
     public void testIsRetired() {
         Man man1 = new Man("John", "Doe", 40); // Not retired
