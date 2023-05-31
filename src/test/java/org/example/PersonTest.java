@@ -1,7 +1,7 @@
 package org.example;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class PersonTest {
 
@@ -9,27 +9,39 @@ public class PersonTest {
     public void testGetFirstName() {
         Person person = new Person("John", "Doe", 30);
         String firstName = person.getFirstName();
-        Assert.assertEquals(firstName, "John");
+
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(firstName, "John");
+        softAssert.assertAll();
     }
 
     @Test(description = "validation of method testGetLastName()")
     public void testGetLastName() {
         Person person = new Person("John", "Doe", 30);
         String lastName = person.getLastName();
-        Assert.assertEquals(lastName, "Doe");
+
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(lastName, "Doe");
+        softAssert.assertAll();
     }
 
     @Test(description = "validation of method testGetAge()")
     public void testGetAge() {
         Person person = new Person("John", "Doe", 30);
         int age = person.getAge();
-        Assert.assertEquals(age, 30);
+
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(age, 30);
+        softAssert.assertAll();
     }
 
     @Test(description = "validation of method testGetMaidenName()")
     public void testGetMaidenName() {
         Person person = new Person("Jane", "Smith", 35);
         String maidenName = person.getMaidenName();
-        Assert.assertEquals(maidenName, null);
+
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertNull(maidenName);
+        softAssert.assertAll();
     }
 }

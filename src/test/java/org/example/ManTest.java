@@ -1,7 +1,7 @@
 import org.example.Man;
 import org.example.Woman;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class ManTest {
 
@@ -13,7 +13,9 @@ public class ManTest {
 
         Woman partner = man.getPartner();
 
-        Assert.assertEquals(partner, woman);
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(partner, woman, "Partner is not retrieved correctly");
+        softAssert.assertAll();
     }
 
     @Test(description = "validation of method testIsRetired()")
@@ -24,8 +26,10 @@ public class ManTest {
         boolean isRetired1 = man1.isRetired();
         boolean isRetired2 = man2.isRetired();
 
-        Assert.assertFalse(isRetired1);
-        Assert.assertTrue(isRetired2);
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertFalse(isRetired1, "Man1 should not be retired");
+        softAssert.assertTrue(isRetired2, "Man2 should be retired");
+        softAssert.assertAll();
     }
 
     @Test(description = "validation of method testRegisterPartnership()")
@@ -36,8 +40,10 @@ public class ManTest {
         man.registerPartnership(woman);
         Woman partner = man.getPartner();
 
-        Assert.assertEquals(partner, woman);
-        Assert.assertEquals(woman.getLastName(), "Doe");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertEquals(partner, woman, "Partner is not registered correctly");
+        softAssert.assertEquals(woman.getLastName(), "Doe", "Last name is wrong for woman");
+        softAssert.assertAll();
     }
 
     @Test(description = "validation of method testDeregisterPartnership()")
@@ -49,7 +55,9 @@ public class ManTest {
         man.deregisterPartnership(false);
         Woman partner = man.getPartner();
 
-        Assert.assertNull(partner);
-        Assert.assertEquals(woman.getLastName(), "Smith");
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertNull(partner, "Partnership is not deregistered correctly");
+        softAssert.assertEquals(woman.getLastName(), "Smith", "Last name is wrong for woman");
+        softAssert.assertAll();
     }
 }
