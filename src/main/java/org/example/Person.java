@@ -4,6 +4,7 @@ public class Person {
     private String firstName;
     private String lastName;
     private int age;
+    private String maidenName;
 
     // Конструктор
     public Person(String firstName, String lastName, int age) {
@@ -12,7 +13,7 @@ public class Person {
         this.age = age;
     }
 
-    // Геттери та сеттери
+    // Геттеры и сеттеры
     public String getFirstName() {
         return firstName;
     }
@@ -35,5 +36,13 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getMaidenName() {
+        return maidenName;
+    }
+
+    public void setMaidenName(String maidenName) {
+        this.maidenName = maidenName;
     }
 }

@@ -7,7 +7,6 @@ public class Woman extends Person {
     // Конструктор
     public Woman(String firstName, String lastName, int age) {
         super(firstName, lastName, age);
-        this.maidenName = maidenName;
     }
 
     // Геттер та сеттер для partner
@@ -37,6 +36,15 @@ public class Woman extends Person {
     public void registerPartnership(Man man) {
         this.partner = man;
         setLastName(man.getLastName());
+    }
+    // Метод, що розлучає пару
+    public void deregisterPartnership(boolean returnToMaidenName) {
+        if (partner != null) {
+            if (returnToMaidenName) {
+                partner.setLastName(partner.getMaidenName());
+            }
+            this.partner = null;
+        }
     }
 
 }
